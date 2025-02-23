@@ -39,7 +39,7 @@ hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname)
 
 #Info
-Ver = "1.1.0" 
+Ver = "1.1.0 TEST UPDATE" 
 Build = "002"
 Latest_update =  "Added bot spam with custom executable python code. Also added DoS attack."
 

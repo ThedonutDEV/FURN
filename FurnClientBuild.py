@@ -40,7 +40,7 @@ IPAddr = socket.gethostbyname(hostname)
 
 #Info
 Ver = "1.2.0"
-Build = "002"
+Build = "003"
 Latest_update =  "Added a socket connetion system. (10.)"
 
 #Custom stuff

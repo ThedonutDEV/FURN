@@ -1,2 +1,2 @@
-FURN client version 1.3.0
+FURN client currently in version 1.2.0
 Used for hacking...

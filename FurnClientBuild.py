@@ -39,9 +39,9 @@ hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname)
 
 #Info
-Ver = "1.1.0 TEST UPDATE" 
+Ver = "1.2.0"
 Build = "002"
-Latest_update =  "Added bot spam with custom executable python code. Also added DoS attack."
+Latest_update =  "Added a socket connetion system. (10.)"
 
 #Custom stuff
 from colorama import init, Fore
@@ -100,9 +100,10 @@ Options = """
 7. Trace | Trace where your data is going on a certain domain/website.
 8. DoS attack | Overloads a server with network traffic. Input the victim as a URL.
 9. BotSpam | Create a bot ready to execute any python code.
-10. Ver | View FURN's latest updates and the current version.
-11. Install Packages | Installs the required packages for Furn to work properly.
-12. Exit | Exit the Furn application.
+10. Socket connector | Connects the user to a server that communticates with clients via network.
+11. Ver | View FURN's latest updates and the current version.
+12. Install Packages | Installs the required packages for Furn to work properly.
+13. Exit | Exit the Furn application.
 
 """
 
@@ -204,11 +205,36 @@ while True:
 
     # Detect Option/Input 10
     elif SelectedOption == "10":
-        print(Latest_update, ", version ",Ver,", build ",Build)
+        print("Socket connector")
+        LocalSocket = socket.socket()
+        Port_To_Connect = input("Port?: ")
+        IP_To_Connect = input("Ip adress?: ")
+        try:
+            LocalSocket.connect((IP_To_Connect,Port_To_Connect))
+            print(Fore.GREEN+ f"Socket connected successfully! Running on port {Port_To_Connect} and Ip adress {IP_To_Connect}" + Fore.RESET)
+            
+        except:
+            print(Fore.RED + "Socket failed to connect." + Fore.RESET)
+
+        Request_To_Make = input("What would you like to send?: ")
+        LocalSocket.send(Request_To_Make)
+        print(Fore.GREEN+ f"Successfully sent {Fore.MAGENTA}{Request_To_Make}{Style.RESET_ALL} from port {Fore.MAGENTA}{Port_To_Connect}{Style.RESET_ALL}." + Fore.RESET)
+        LocalSocket.close()
+    
+
+
+
+
 
 
     # Detect Option/Input 11
     elif SelectedOption == "11":
+        print(Latest_update, ", version ",Ver,", build ",Build)
+
+
+
+    # Detect Option/Input 12
+    elif SelectedOption == "12":
         print(Fore.CYAN + "Installing requests" + Fore.RESET)
         cmd = "pip install requests"
         subprocess.run(cmd, shell=True)
@@ -221,8 +247,8 @@ while True:
         print(Fore.GREEN + "installed all required libraries!" + Fore.RESET)
     
 
-    # Detect Option/Input 12
-    elif SelectedOption == "12":
+    # Detect Option/Input 13
+    elif SelectedOption == "13":
         print("Exiting FURN application...")
         time.sleep(2)
         sys.exit()

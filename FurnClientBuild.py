@@ -39,9 +39,9 @@ hostname = socket.gethostname()
 IPAddr = socket.gethostbyname(hostname)
 
 #Info
-Ver = "1.2.0"
-Build = "003"
-Latest_update =  "Added a socket connetion system. (10.)"
+Ver = "1.2.1"
+Build = "004"
+Latest_update =  "Added a socket connection system. (10.)"
 
 #Custom stuff
 from colorama import init, Fore
@@ -100,7 +100,7 @@ Options = """
 7. Trace | Trace where your data is going on a certain domain/website.
 8. DoS attack | Overloads a server with network traffic. Input the victim as a URL.
 9. BotSpam | Create a bot ready to execute any python code.
-10. Socket connector | Connects the user to a server that communticates with clients via network.
+10. Socket connector | Connects the user to a server that communicates with clients via network.
 11. Ver | View FURN's latest updates and the current version.
 12. Install Packages | Installs the required packages for Furn to work properly.
 13. Exit | Exit the Furn application.
@@ -152,7 +152,7 @@ while True:
 
             # Detect Option/Input 6
     elif SelectedOption == "6":
-        print("Bypass admin promt.")
+        print("Bypass admin prompt.")
         ApplicationToBypass = input("File/Application to bypass: ")
         cmd = "set __compact_layer=runasinvoker" 
         subprocess.run(cmd, shell=True)

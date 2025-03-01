@@ -1,4 +1,3 @@
-Currently working on version 1.3.0
+Currently working on version 1.3.1
 
-Version 1.3.0 will POSSIBLY contain a new option for injecting packets into a wireless network.
-Also may include bug fixes for Mail Bombing and possibly making the DoS attack more dangerous.
+Version 1.3.1 Could include an injector for mySql.
